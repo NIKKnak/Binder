@@ -21,6 +21,7 @@ namespace Binder
             InitializeComponent();
             this.startPage = startPage;
         }
+
         private void buttonEnterKey_Click(object sender, EventArgs e)
         {
             if (textBoxKey.Text.Length > 1)
@@ -31,10 +32,8 @@ namespace Binder
                 textBoxKey.SelectionStart = textBoxKey.Text.Length;
             }
 
-            startPage.AddValue(textBoxKey.Text, textBoxValue.Text);
-
+            startPage.AddValue(textBoxKey.Text.ToUpper(), textBoxValue.Text); // Приводим к верхнему регистру
             this.Close();
-
             startPage.AddListBox();
         }
     }
